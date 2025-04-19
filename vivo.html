@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecycleDevice - Sell Your Old Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f0f8ff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        .logo img {
+            max-height: 80px;
+            margin-right: 10px;
+        }
+
+        .b2b {
+            background-color: #e9ecef;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #495057;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: #212529;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #6c757d;
+        }
+
+        .tagline {
+            font-weight: 600;
+            color: #007bff;
+            font-size: 1.4rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-section {
+            padding: 60px 0;
+            background-color: #ffffff;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .search-bar input {
+            width: 80%;
+            padding: 12px 16px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar input::placeholder {
+            color: #888;
+        }
+
+        .device-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            text-align: center;
+            margin: 20px 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .category img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sell-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .sell-section h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #212529;
+        }
+        .sell-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .sell-section li {
+            margin: 15px 30px;
+        }
+
+        .sell-section a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .sell-section a:hover {
+            color: #0056b3;
+        }
+
+
+        .e-waste-section {
+            padding: 60px 0;
+            background-color: #ffffff;
+        }
+
+        .e-waste-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #212529;
+        }
+
+        .e-waste-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .e-waste-list li {
+            margin: 15px 30px;
+        }
+
+        .e-waste-list a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .e-waste-list a:hover {
+            color: #0056b3;
+        }
+
+        .recycle-image {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .recycle-image img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        #searchResults {
+            display: none;
+            text-align: left;
+        }
+
+        #searchResults ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #backButton {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        /* New Section: AI and Blockchain Technology */
+        .tech-section {
+            background-color: #e0f7fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .tech-section h2 {
+            font-size: 2.5rem;
+            color: #212529;
+            margin-bottom: 20px;
+        }
+
+        .tech-section p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .tech-cards {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .tech-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+
+        .tech-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .tech-card p {
+            color: #6c757d;
+        }
+
+        /* Feedback Form */
+        .feedback-section {
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+
+        .feedback-section h2 {
+            font-size: 2.5rem;
+            color: #212529;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .feedback-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            margin-bottom: 20px;
+        }
+
+        .feedback-form button {
+            padding: 12px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .feedback-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<header>
+<div class="container">
+            <div class="logo">
+                <img src="C:\Users\DHAYEY PATEL\Pictures\ewaste.png" alt="RecycleDevice Logo">
+                recycledevice
+            </div>
+            <div class="b2b">B2B Marketplace</div>
+        </div>
+
+        <!-- Header Section (same as your original code) -->
+    </header>
+
+    <section class="hero">
+<div class="container">
+            <div class="hero-text">
+                <h1>SELL OLD MOBILE & LAPTOP</h1>
+                <p>Sell Old Mobile Phone & Laptop online in India for best price. Quick and Simple Process - Search Device, Get Instant Quote, Choose Pickup Slot, Get Free Same Day Doorstep Pickup, Onspot Payment.</p>
+                <p class="tagline">TRUE PRICE NO SURPRISE</p>
+            </div>
+            <div class="hero-image">
+                <img src="C:\Users\DHAYEY PATEL\Downloads\external_mobile-security-versus-desktop-and-laptop-security-is-there-even-a-difference-anymore.webp" alt="Laptop and Phones">
+            </div>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search your device">
+            </div>
+            <div class="device-categories" id="deviceCategories">
+<div class="category" data-device="mobile" data-search-terms="mobile iphone mi vivo oppo realme rog" onclick="showCategoryResult('mobile')">
+                    <img src="C:\Users\DHAYEY PATEL\Pictures\WhatsApp Image 2025-03-30 at 13.39.56_d35fe704.jpg" alt="Mobile">
+                    <span>SELL MOBILE</span>
+                </div>
+                <div class="category" data-device="tablet" data-search-terms="tablet ipad samsung spice" onclick="showCategoryResult('tablet')">
+                    <img src="C:\Users\DHAYEY PATEL\Pictures\WhatsApp Image 2025-03-30 at 13.39.23_5baeb712.jpg" alt="Tablet">
+                    <span>SELL TABLET</span>
+                </div>
+                <div class="category" data-device="laptop" data-search-terms="laptop hp macbook lenovo dell" onclick="showCategoryResult('laptop')">
+                    <img src="C:\Users\DHAYEY PATEL\Pictures\WhatsApp Image 2025-03-30 at 13.40.23_bcf06272.jpg" alt="Laptop">
+                    <span>SELL LAPTOP</span>
+                </div>
+                <div class="category" data-device="smartwatch" data-search-terms="smartwatch boat noise samsung" onclick="showCategoryResult('smartwatch')">
+                    <img src="C:\Users\DHAYEY PATEL\Pictures\WhatsApp Image 2025-03-30 at 13.39.56_b0d8214a.jpg" alt="Smart Watch">
+                    <span>SELL SMART WATCH</span>
+                </div>
+                <div class="category" data-device="console" data-search-terms="console game" onclick="showCategoryResult('console')">
+                    <img src="C:\Users\DHAYEY PATEL\Pictures\WhatsApp Image 2025-03-30 at 13.39.57_614e6010.jpg" alt="Game Console">
+                    <span>SELL GAME CONSOLE</span>
+                </div>
+            </div>
+            <button id="backButton" onclick="showCategories()">Back</button>
+            <div id="searchResults"></div>
+        </div>
+    </section>
+
+    <section class="sell-section">
+<div class="container">
+            <h2>Where You Can Sell Your Device</h2>
+            <ul>
+                <li><a href="https://www.cashify.in/" target="_blank">Cashify</a></li>
+                <li><a href="https://www.quikr.com/" target="_blank">Quikr</a></li>
+                <li><a href="https://www.olx.in/" target="_blank">OLX India</a></li>
+                <li><a href="https://www.zopper.com/" target="_blank">Zopper</a></li>
+                <li><a href="https://www.instacash.in/" target="_blank">InstaCash</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="e-waste-section">
+<div class="container">
+            <h2>Indian E-Waste Management Companies</h2>
+            <ul class="e-waste-list">
+                <li><a href="https://attero.in/" target="_blank">Attero Recycling</a></li>
+                <li><a href="https://www.exigo.in" target="_blank">Exigo Recycling</a></li>
+                <li><a href="https://www.karosambhav.com/" target="_blank">Karo Sambhav</a></li>
+                <li><a href="https://www.ewasteindia.com" target="_blank">E-Waste Recyclers India</a></li>
+                <li><a href="https://www.greene.in" target="_blank">Greene</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class = "recycle-image">
+        <div class="container">
+            <img src="C:\Users\DHAYEY PATEL\Pictures\DALL·E-2024-11-05-15.41.06-A-powerful-representation-of-the-letters-AI-surfing-a-large-wave-made-of-electronic-waste-symbolizing-AIs-contribution-to-e-waste.-The-wave-is-com.webp" alt="Recycle E-Waste">
+        </div>
+    </section>
+
+    <section class="tech-section">
+<div class="container">
+            <h2>AI & Blockchain Technologies in E-Waste Management</h2>
+            <p>Discover how cutting-edge technologies are revolutionizing e-waste recycling and disposal processes.</p>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <h3>AI-Powered Sorting</h3>
+                    <p>AI improves recycling efficiency, allowing automated sorting and higher material recovery rates.</p>
+                </div>
+                <div class="tech-card">
+                    <h3>Blockchain Transparency</h3>
+                    <p>Blockchain ensures traceability, minimizing illegal dumping and promoting responsible recycling practices.</p>
+                </div>
+                <div class="tech-card">
+                    <h3>Energy Conversion</h3>
+                    <p>Non-recyclable e-waste is converted into clean energy, reducing environmental impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback-section">
+ <div class="container">
+            <h2>We Value Your Feedback</h2>
+            <form class="feedback-form">
+                <textarea placeholder="Share your thoughts or suggestions..." rows="5"></textarea>
+                <br>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+
+<footer>
+<div class="container">
+            <p>&copy; 2024 RecycleDevice. All rights reserved.</p>
+        </div>
+</footer>
+
+<script>
+// AI-powered recommendation system (simplified)
+const devicePricing = {
+    'iphone mobile': { 'Cashify': 'Best Price', 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'mi mobile': { 'Cashify': 'Good', 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'vivo mobile': { 'Cashify': 'Good', 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'oppo mobile': { 'Cashify': 'Good', 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'realme mobile': { 'Cashify': 'Good', 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'rog mobile': { 'Cashify': 'Good', 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'ipad': { 'Cashify': 'Best Price', 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'samsung tablet': { 'Cashify': 'Good', 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'spice tablet': { 'Quikr': 'Good', 'OLX India': 'Variable' },
+    'hp laptop': { 'Zopper': 'Best Price', 'Cashify':'Good', 'OLX India': 'Variable' },
+    'macbook': { 'Cashify': 'Best Price', 'Zopper': 'Good', 'OLX India': 'Variable' },
+    'lenovo laptop': { 'Zopper': 'Best Price', 'Cashify':'Good', 'OLX India': 'Variable' },
+    'dell laptop': { 'Zopper': 'Best Price', 'Cashify':'Good', 'OLX India': 'Variable' },
+    'boat smartwatch': { 'InstaCash': 'Best Price', 'Cashify': 'Good', 'Quikr': 'Variable' },
+    'noise watch': { 'InstaCash': 'Best Price', 'Cashify': 'Good', 'Quikr': 'Variable' },
+    'samsung smartwatch':{ 'InstaCash': 'Best Price', 'Cashify':'Good', 'Quikr':'Variable' }
+};
+
+// Function to handle search and display AI-powered device results
+function searchDevices(query) {
+    const categories = Array.from(document.querySelectorAll('.category'));
+    let matchingCategories = categories.filter(category => category.dataset.searchTerms.includes(query));
+
+    if (matchingCategories.length === 0) {
+        matchingCategories = categories.filter(category => category.dataset.device.includes(query));
+    }
+
+    if (matchingCategories.length > 0) {
+        let resultHTML = '<ul>';
+        matchingCategories.forEach(category => {
+            const deviceName = query;
+            resultHTML += `<li>${category.querySelector('span').textContent} - Sell at: <ul>`;
+            if(devicePricing[deviceName]) {
+                // AI Recommendation: Select the best-selling platform
+                let bestPlatform = getBestPlatform(deviceName);
+                resultHTML += `<li><a href="https://www.${bestPlatform.toLowerCase()}.in/" target="_blank">${bestPlatform} - ${devicePricing[deviceName][bestPlatform]}</a></li>`;
+            } else {
+                resultHTML += `<li><a href="https://www.cashify.in/" target="_blank">Cashify</a></li>`;
+                resultHTML += `<li><a href="https://www.quikr.com/" target="_blank">Quikr</a></li>`;
+                resultHTML += `<li><a href="https://www.olx.in/" target="_blank">OLX India</a></li>`;
+                resultHTML += `<li><a href="https://www.zopper.com/" target="_blank">Zopper</a></li>`;
+                resultHTML += `<li><a href="https://www.instacash.in/" target="_blank">InstaCash</a></li>`;
+            }
+            resultHTML += '</ul></li>';
+        });
+        resultHTML += '</ul>';
+        searchResults.innerHTML = resultHTML;
+        searchResults.style.display = 'block';
+        deviceCategories.style.display = 'none';
+        backButton.style.display = 'block';
+    } else {
+        searchResults.innerHTML = '<p>No matching devices found.</p>';
+        searchResults.style.display = 'block';
+        deviceCategories.style.display = 'none';
+        backButton.style.display = 'block';
+    }
+}
+
+// AI Recommendation Algorithm to select the best platform
+function getBestPlatform(deviceName) {
+    if (devicePricing[deviceName]) {
+        // Implement AI model logic here (simplified to selecting the platform with the best price)
+        let bestPlatform = Object.keys(devicePricing[deviceName]).reduce((a, b) => {
+            return devicePricing[deviceName][a] === 'Best Price' ? a : b;
+        });
+        return bestPlatform;
+    }
+    return 'Cashify'; // Default
+}
+
+const searchInput = document.getElementById('searchInput');
+const deviceCategories = document.getElementById('deviceCategories');
+const searchResults = document.getElementById('searchResults');
+const backButton = document.getElementById('backButton');
+
+searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    if(query){
+        searchDevices(query);
+    } else {
+        searchResults.style.display = 'none';
+        deviceCategories.style.display = 'flex';
+        backButton.style.display = 'none';
+    }
+});
+
+function showCategories() {
+    deviceCategories.style.display = 'flex';
+    searchResults.style.display = 'none';
+    backButton.style.display = 'none';
+}
+</script>
+
+</body>
+</html>
